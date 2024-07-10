@@ -26,7 +26,7 @@
 ## Docker
 
 ```shell
-docker run -d -p 58080:80 --restart always --name subweb aircross/subweb:latest
+docker run -d -p 58080:80 --restart always --name subweb aircross/subweb
 ```
 
 若需要对代码进行修改，你需要在本地构建镜像并运行。
@@ -37,7 +37,7 @@ docker -v
 Docker version 23.0.4, build f480fb1
 
 docker build -t subweb-local:latest .
-docker run -d -p 58080:80 --restart always --name subweb subweb-local:latest
+docker run -d -p 58080:80 --restart always --name subweb subweb-local
 ```
 
 ## Requirements
