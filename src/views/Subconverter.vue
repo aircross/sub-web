@@ -269,7 +269,13 @@ export default {
                 label: "ssrCloud",
                 value:
                   "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/ssrcloud.ini"
-              }
+              },
+              {label:"rixCloud",value:"https://raw.githubusercontent.com/CareyWang/Rules/master/RemoteConfig/customized/rixcloud.ini"},
+              {label:"NyanCAT",value:"https://raw.githubusercontent.com/CareyWang/Rules/master/RemoteConfig/customized/nyancat.ini"},
+              {label:"YoYu",value:"https://raw.githubusercontent.com/CareyWang/Rules/master/RemoteConfig/customized/yoyu.ini"},
+              {label:"Nexitally",value:"https://raw.githubusercontent.com/CareyWang/Rules/master/RemoteConfig/customized/nexitally.ini"},
+              {label:"贼船",value:"https://raw.githubusercontent.com/CareyWang/Rules/master/RemoteConfig/customized/zeichuan.ini"},
+              {label:"布丁",value:"https://raw.githubusercontent.com/CareyWang/Rules/master/RemoteConfig/customized/pud.ini"}
             ]
           },
           {
