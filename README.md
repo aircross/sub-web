@@ -69,7 +69,7 @@ yarn serve
 
 ## Deploy
 
-发布到线上环境，你需要安装依赖，执行以下打包命令，生成的 dist 目录即为发布目录。如需修改默认后端，请修改 src/views/Subconverter.vue 中 **defaultBackend** 配置项。
+发布到线上环境，你需要安装依赖，执行以下打包命令，生成的 dist 目录即为发布目录。如需修改默认后端，请修改 .env 中 **VUE_APP_SUBCONVERTER_DEFAULT_BACKEND** 配置项。
 
 ```shell
 yarn build
