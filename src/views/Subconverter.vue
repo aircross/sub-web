@@ -215,7 +215,7 @@ export default {
           Trojan: "trojan",
           Surge3: "surge&ver=3",
         },
-        backendOptions: [{ value: "http://127.0.0.1:25500/sub?" }],
+        backendOptions: [{ value: "http://sub.wget.at:25500/sub?" },{ value: "http://127.0.0.1:25500/sub?" }],
         remoteConfig: [
           {
             label: "universal",
