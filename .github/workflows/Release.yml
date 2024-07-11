@@ -37,7 +37,7 @@ jobs:
         yarn build
 
     - name: Package
-      run: tar -zcvf subweb-$TAG_NAME.tar.gz dist
+      run: tar -zcvf subweb-${{ env.TAG_NAME }}.tar.gz dist
 
     - name: Upload
       uses: actions/upload-artifact@v4
@@ -50,6 +50,6 @@ jobs:
       with:
         repo_token: ${{ secrets.GH_TOKEN }}
         tag: ${{ github.ref }}
-        file: subweb-$TAG_NAME.tar.gz
-        asset_name: subweb-$TAG_NAME.tar.gz
+        file: subweb-${{ env.TAG_NAME }}.tar.gz
+        asset_name: subweb-${{ env.TAG_NAME }}.tar.gz
         prerelease: true
