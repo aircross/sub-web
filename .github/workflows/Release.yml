@@ -1,4 +1,4 @@
-name: Build And Releas
+name: Build And Release
 
 on:
   push:
