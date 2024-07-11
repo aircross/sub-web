@@ -1,0 +1,55 @@
+name: Build And Releas
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Get the trigger tag
+      id: get_tag
+      run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+    - name: Print the tag
+      run: echo "The tag that triggered this workflow is $TAG_NAME"
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Get dependencies and build
+      run: |
+        yarn install
+        yarn build
+
+    - name: Package
+      run: tar -zcvf subweb-$TAG_NAME.tar.gz dist
+
+    - name: Upload
+      uses: actions/upload-artifact@v4
+      with:
+        name: dist
+        path: dist/
+        
+    - name: Upload files to GH release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GH_TOKEN }}
+        tag: ${{ github.ref }}
+        file: subweb-$TAG_NAME.tar.gz
+        asset_name: subweb-$TAG_NAME.tar.gz
+        prerelease: true
